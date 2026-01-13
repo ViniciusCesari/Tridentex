@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es-PY" dir="ltr">
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tridentex Paraguay - Salud Masculina</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-navy: #002b5c;
+            --accent-green: #28a745;
+            --cta-orange: #ff6b00;
+            --text-dark: #333333;
+            --bg-light: #f4f8fb;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-navy);
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--primary-navy);
+        }
+
+        .hero {
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, #eef7ff 0%, #ffffff 100%);
+        }
+
+        h1 {
+            color: var(--primary-navy);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .sub-headline {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-main {
+            max-width: 280px;
+            width: 100%;
+            margin: 20px 0;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: #e1f0ff;
+            color: var(--primary-navy);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border: 1px solid #ccddee;
+        }
+
+        .price-box {
+            background: #fff;
+            color: var(--text-dark);
+            padding: 20px;
+            border-radius: 12px;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--primary-navy);
+            min-width: 280px;
+        }
+
+        .price-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .price-now {
+            font-size: 2.2rem;
+            display: block;
+            color: var(--cta-orange);
+            font-weight: 900;
+        }
+        
+        .price-old {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.1rem;
+        }
+
+        .btn-action {
+            background-color: var(--cta-orange);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+            transition: transform 0.2s;
+            text-transform: uppercase;
+            width: 90%;
+            max-width: 400px;
+        }
+        
+        .btn-action:hover {
+            transform: scale(1.02);
+            background-color: #e65a00;
+        }
+
+        .symptoms-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-navy);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .symptom-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .symptom-item {
+            display: flex;
+            align-items: center;
+            background: #fff5f5;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+        }
+
+        .symptom-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-green);
+            text-align: center;
+        }
+
+        .check-icon {
+            color: var(--accent-green);
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .ingredients-section {
+            background-color: var(--primary-navy);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .ingredients-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .ingredient-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            padding: 40px 20px;
+            background: #222;
+            color: #aaa;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .legal-disclaimer {
+            border-top: 1px solid #444;
+            margin-top: 20px;
+            padding-top: 20px;
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+
+        @media (min-width: 768px) {
+            .symptom-list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        🚚 ENVÍO RÁPIDO A TODO PARAGUAY 🇵🇾
+    </header>
+
+    <section class="hero">
+        <div class="badge-container">
+            <span class="badge">🛡️ Fórmula Natural</span>
+            <span class="badge">👨‍⚕️ Calidad Premium</span>
+            <span class="badge">✅ Geo: Paraguay</span>
+        </div>
+        
+        <h1>TRIDENTEX</h1>
+        <p class="sub-headline">Fórmula avanzada para el bienestar masculino. Apoya tu salud sin procedimientos invasivos.</p>
+
+        <img src="tridentex1.png" alt="Frasco de Tridentex" class="product-main">
+
+        <div class="price-box">
+            <span class="price-label">Oferta Especial Paraguay:</span>
+            <span class="price-old">₲ 580.000</span>
+            <span class="price-now">₲ 290.000</span>
+            <span class="price-label" style="color: green; font-weight: bold;">¡50% DE DESCUENTO!</span>
+        </div>
+
+        <br>
+        <a href="https://t7sky.doctornroman.com/l" onclick="return gtag_report_conversion('https://SEU-LINK-AQUI.com');" class="btn-action">PEDIR AHORA</a>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: #777;">Pago contra entrega (Efectivo al recibir)</p>
+    </section>
+
+    <section class="symptoms-section">
+        <h2 class="section-title">Principales señales de alerta</h2>
+        <p style="text-align: center; margin-bottom: 20px;">La salud prostática requiere atención preventiva a partir de los 40 años.</p>
+        
+        <div class="symptom-list">
+            <div class="symptom-item">
+                <span class="symptom-icon">🔥</span>
+                <span>Molestias al orinar.</span>
+            </div>
+            <div class="symptom-item">
+                <span class="symptom-icon">🌙</span>
+                <span>Visitas frecuentes al baño por la noche.</span>
+            </div>
+            <div class="symptom-item">
+                <span class="symptom-icon">📉</span>
+                <span>Disminución del deseo.</span>
+            </div>
+            <div class="symptom-item">
+                <span class="symptom-icon">⚠️</span>
+                <span>Sensación de pesadez pélvica.</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-grid">
+        <div class="feature-card">
+            <span class="check-icon">✓</span>
+            <h3>Apoyo Integral</h3>
+            <p>Ayuda a mantener la función prostática saludable de forma natural.</p>
+        </div>
+        
+        <div class="feature-card">
+            <span class="check-icon">✓</span>
+            <h3>Confort Urinario</h3>
+            <p>Contribuye a normalizar la frecuencia urinaria nocturna.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="check-icon">✓</span>
+            <h3>Efecto Sostenible</h3>
+            <p>Resultados progresivos con el uso continuo del suplemento.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="check-icon">✓</span>
+            <h3>Vitalidad</h3>
+            <p>Ingredientes activos para recuperar la energía y confianza.</p>
+        </div>
+    </section>
+
+    <section class="ingredients-section">
+        <h2 style="margin-bottom: 10px;">Poder Natural</h2>
+        <p>Una fórmula potente con ingredientes seleccionados:</p>
+        <div class="ingredients-list">
+            <span class="ingredient-tag">L-Arginina</span>
+            <span class="ingredient-tag">Guaraná</span>
+            <span class="ingredient-tag">Ginseng</span>
+            <span class="ingredient-tag">Taurina</span>
+            <span class="ingredient-tag">Café Verde</span>
+            <span class="ingredient-tag">Zinc</span>
+            <span class="ingredient-tag">Vitamina E</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Tridentex PY. Todos los derechos reservados.</p>
+        <div class="legal-disclaimer">
+            <p><strong>Descargo de responsabilidad:</strong> Este producto es un suplemento dietético, no un medicamento. No está destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Los resultados pueden variar. Consulte a su médico antes de usar.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
